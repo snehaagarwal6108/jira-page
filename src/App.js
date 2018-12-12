@@ -50,8 +50,8 @@ Affects Version/s:      None
     </div>{this.state.showStencilV ?
 <div className="col-xs-4">
 <div className="bold1">Stencil Suggestions</div>
-<div><a href="https://localhost:3000/dashboard/login">Login App</a></div>
-<div><a href="https://localhost:3000/dashboard/mailbox">Mailbox App</a></div>
+<div><a href="http://localhost:3000/dashboard/login">Login App</a></div>
+<div><a href="http://localhost:3000/dashboard/mailbox">Mailbox App</a></div>
 </div> :null}
          </div>
          <div className="col-xs-4">
