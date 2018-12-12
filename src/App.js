@@ -3,19 +3,32 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {showStencilV: false};
+  }
+ 
+  showStencil=() => {
+    console.log(this.state.showStencilV);
+    this.setState(state => ({
+      showStencilV: !state.showStencilV
+    }));
+  }
   render() {
     return (
-         <div class="container">
+         <div className="container">
          <h2>JIRA</h2>
-         <h4>banking-k-all /IUA-2767 Banking Section-Front End Changes /IUA -2767</h4>
-         <h2>Banking Section - Front End Changes :UI Development</h2>
-         <button type="button" class="btn marginL">Edit</button>
-         <button type="button" class="btn marginL">Comment</button>
-         <button type="button" class="btn marginL">Assign</button>
-         <button type="button" class="btn marginL">More</button>
-         <button type="button" class="btn marginL">Open</button>
-         <button type="button" class="btn marginL">In Progress</button>
-         <button type="button" class="btn marginL">Workflow</button>
+         <h4>banking-uk-all /IUA-2767 Banking Section-Login Page /IUA -2767</h4>
+         <span> <h2>Banking Section - Login Page :UI Development</h2></span>
+         <span></span>
+         <button type="button" className="btn marginL">Edit</button>
+         <button type="button" className="btn marginL">Comment</button>
+         <button type="button" className="btn marginL">Assign</button>
+         <button type="button" className="btn marginL">More</button>
+         <button type="button" className="btn marginL">Open</button>
+         <button type="button" className="btn marginL">In Progress</button>
+         <button type="button" className="btn marginL">Workflow</button>
+         <button type="button" className="btn btn-info marginL6" onClick={this.showStencil}>Check Stencil Suggestion</button>
          <div className="row">
          <div className="col-xs-8">
 <div className="bold1">Details ___________________________________________________________________________________</div>
@@ -26,7 +39,7 @@ class App extends Component {
 Affects Version/s:      None
 </div>
 <div>Components:     None</div>
-<div>Labels:      None</div>
+<div>Labels:      #Login#Banking#password</div>
 <div>Sprint:      UK Banking Sprint 28</div>
 <div>Rank:        abcdefg</div>
 </div>
@@ -34,9 +47,15 @@ Affects Version/s:      None
 <div>Status:     DONE(View Workflow)</div>
 <div>Resolution:     Done</div>
 <div>Fix Version/s:     Done</div>
-</div>
+    </div>{this.state.showStencilV ?
+<div className="col-xs-4">
+<div className="bold1">Stencil Suggestions</div>
+<div><a href="https://localhost:3000">Login App</a></div>
+<div><a href="https://localhost:3000">Mailox App</a></div>
+</div> :null}
          </div>
          <div className="col-xs-4">
+         
          <div className="bold1">People ____________________________________________________________</div>
          
          <div>Assignee:     Sneha Agarwal</div>
@@ -86,11 +105,11 @@ Affects Version/s:      None
        <div className="col-xs-8">
 <div className="bold1">Activity ___________________________________________________________________________________</div>
 <div className="col-xs-10">
-<button type="button" class="btn ">All</button>
-         <button type="button" class="btn">Comments</button>
-         <button type="button" class="btn ">Work Log</button>
-         <button type="button" class="btn ">history</button>
-         <button type="button" class="btn ">Activity</button>
+<button type="button" className="btn ">All</button>
+         <button type="button" className="btn">Comments</button>
+         <button type="button" className="btn ">Work Log</button>
+         <button type="button" className="btn ">history</button>
+         <button type="button" className="btn ">Activity</button>
 <div>There are no comments in this issue</div>
 </div>
 
